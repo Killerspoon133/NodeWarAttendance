@@ -5,5 +5,5 @@ Console App.
 
 Commands:
 
--g --gather <input folder path>
--e --export <MMYYYY>
+-g --gather "input folder path"
+-e --export "MMYYYY"
