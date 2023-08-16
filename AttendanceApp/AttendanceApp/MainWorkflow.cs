@@ -23,17 +23,6 @@ namespace AttendanceApp
 
         public void Gather(string inputFolder)
         {
-            //var guildList = config.GetSection("Guilds").GetChildren().Select(x => x.Value).ToArray();
-            //var len = guildList.Length;
-
-            //for (int i = 0; i < len; i++)
-            //{
-            //    Console.WriteLine(guildList[i]);
-            //}
-            //var workingDir = Environment.CurrentDirectory;
-            //var projDir = Directory.GetParent(workingDir).Parent.Parent.FullName;
-            //Console.WriteLine("proj dir: " + projDir);
-
             var fileList = Directory.GetFiles(inputFolder, "*.txt");
 
             Console.WriteLine("num: " + fileList.Length);

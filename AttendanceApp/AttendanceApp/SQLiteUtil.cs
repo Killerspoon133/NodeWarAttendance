@@ -94,21 +94,5 @@ namespace AttendanceApp
 
             return familyNames;
         }
-
-        public void ReadData(SqliteConnection conn)
-        {
-            var stringCommand = "SELECT * FROM SampleTable";
-            SqliteCommand cmd = conn.CreateCommand();
-            cmd.CommandText = stringCommand;
-
-            SqliteDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                Console.WriteLine("Reading Data...");
-                var stringReader = reader.GetString(0);
-                Console.WriteLine(stringReader);
-            }
-            conn.Close();
-        }
     }
 }

@@ -1,11 +1,8 @@
 ﻿namespace AttendanceApp
 {
     using System;
-    using System.IO.Abstractions;
     using CommandLine;
-    using IronOcr;
     using Microsoft.Extensions.Configuration;
-    using Microsoft.Extensions.DependencyInjection;    
 
     public static class Program
     {
@@ -29,22 +26,6 @@
                 builder.AddJsonFile("appsettings.json");             
                 var config = builder.Build();
 
-                //var ocr = new IronTesseract();
-
-                //using (var ocrInput = new OcrInput())
-                //{
-                //    ocrInput.AddImage("F:\\Black Desert\\nodewar\\attendance\\Storm_08162023.PNG");
-
-                //    // Optionally Apply Filters if needed:
-                //    // ocrInput.Deskew();  // use only if image not straight
-                //    // ocrInput.DeNoise(); // use only if image contains digital noise
-                //    ocrInput.Binarize();
-
-
-                //    var ocrResult = ocr.Read(ocrInput);
-                //    Console.WriteLine(ocrResult.Text);
-                //}
-
                 var mainWorkflow = new MainWorkflow(config);
 
                 Parser.Default.ParseArguments<Options>(args)
@@ -53,7 +34,6 @@
                         if (o.Gather != null)
                         {
                             Console.WriteLine("Gathering from: " + o.Gather);
-                            //mainWorkflow.Gather("C:\\Users\\ReoSoul\\source\\repos\\AttendanceApp\\AttendanceApp\\Inputs");
                             mainWorkflow.Gather(o.Gather);
                         }
                         if (o.Export != null)
