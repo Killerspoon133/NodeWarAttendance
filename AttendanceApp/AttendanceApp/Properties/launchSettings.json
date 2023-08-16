@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AttendanceApp": {
+      "commandName": "Project",
+      "commandLineArgs": "-e 082023 -g C:\\Users\\ReoSoul\\source\\repos\\AttendanceApp\\AttendanceApp\\Inputs"
+    }
+  }
+}
